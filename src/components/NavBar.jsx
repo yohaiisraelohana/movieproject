@@ -3,7 +3,8 @@ import React from 'react'
 
 //icons imports
 import {SiThemoviedatabase} from 'react-icons/si'
-
+import { AiOutlineShoppingCart} from 'react-icons/ai'
+import {FaUserCircle} from 'react-icons/fa'
 
 const NavBar = () => {
   return (
@@ -13,10 +14,14 @@ const NavBar = () => {
                   <span className='text-white text-6xl'><SiThemoviedatabase/></span>
                 </div>
                 <div className="search w-3/12 flex justify-center">
-                  <input type="text" />
+                  <input type="text"
+                      className='rounded-md outline-none px-2' />
                 </div>
                 <div className="menu w-3/12 flex justify-end">
-                  <span className='text-white'>cart</span>
+                  <span className='text-white  flex'>
+                    <AiOutlineShoppingCart className='px-1 text-3xl'/>
+                    <FaUserCircle className='px-1 text-3xl'/>
+                  </span>
                 </div>
             </div>
     </div>
