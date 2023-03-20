@@ -1,11 +1,14 @@
+//style imports
 import './App.css'
+
+//component imports
+import AppRouter from './routes/AppRouter'
 
 const App = ()=> {
 
-
   return (
     <div className="App">
-      <p>app</p>
+      <AppRouter/>
     </div>
   )
 }
