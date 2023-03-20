@@ -143,7 +143,9 @@ const Carusel = () => {
         const [state, dispatch] = React.useReducer(slidesReducer, initialState);
       
         return (
-          <div className="slides">
+          <div className="html h-screen">
+            <div className="body">
+            <div className="slides">
             <button onClick={() => dispatch({ type: "PREV" })}>‹</button>
       
             {[...slides, ...slides, ...slides].map((slide, i) => {
@@ -151,6 +153,8 @@ const Carusel = () => {
               return <Slide slide={slide} offset={offset} key={i} />;
             })}
             <button onClick={() => dispatch({ type: "NEXT" })}>›</button>
+          </div>
+            </div>
           </div>
         );
       
