@@ -4,7 +4,7 @@ const YearsNavbar = () => {
     const top_years = [1950,1960,1970,1980,1990,2000,2010,2020];
   return (
     <div className='YearsNavbar w-screen flex justify-center' >
-        <div className=" w-5/6 py-3 flex justify-between">
+        <div className=" w-5/6 py-7 flex justify-between">
             <div className="flex w-3/4 items-end">
                 <p className=' text-3xl mr-2'>Top Years</p>
                 <div className="flex justify-start items-end">
