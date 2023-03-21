@@ -3,6 +3,7 @@ import React,{useEffect, useState} from 'react'
 
 //components imports
 import Carusel from '../components/Carusel'
+import Cube from '../components/Cube';
 import MoviesPreview from '../components/MoviesPreview';
 import NavBar from '../components/NavBar'
 import YearsNavbar from '../components/YearsNavbar';
@@ -34,6 +35,9 @@ const Home = () => {
         </div>
         <YearsNavbar/>
         <MoviesPreview bank_movies={bank_movies}/>
+        <div className=" h-screen w-screen flex justify-center items-center z-10 bg-white">
+          <Cube/>
+        </div>
     </div>
   )
 }
