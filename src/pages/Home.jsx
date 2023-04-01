@@ -27,7 +27,7 @@ const Home = () => {
     <div>
         <NavBar setApiReq={setApiReq}/>
         <div className=' h-screen'>
-            <Carusel bank_movies={bank_movies}/>
+            <Carusel />
         </div>
         <YearsNavbar setApiReq={setApiReq}/>
         <MoviesPreview bank_movies={bank_movies}/>
