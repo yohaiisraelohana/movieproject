@@ -1,4 +1,5 @@
 import React from 'react'
+import {AiOutlineMenu} from 'react-icons/ai'
 
 const YearsNavbar = ({setApiReq}) => {
 //https://www.omdbapi.com/?s=bank&amp;y=2020&amp;apikey=000000
@@ -15,8 +16,8 @@ const YearsNavbar = ({setApiReq}) => {
                     ))}
                 </div>
             </div>
-            <div className="w-3/4 flex justify-end">
-                menu
+            <div className="w-3/4 flex justify-end items-center">
+                <AiOutlineMenu/>
             </div>
         </div>
     </div>
