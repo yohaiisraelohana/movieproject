@@ -1,10 +1,13 @@
 import React ,{ useState } from 'react'
 import { useEffect } from 'react';
-import {useParams} from 'react-router-dom'
+import {useParams,useNavigate} from 'react-router-dom'
+
+import {AiOutlineArrowRight} from 'react-icons/ai'
 
 const Movie = () => {
   const [movie,setMovie] = useState();
   const {id} = useParams();
+  const navigate = useNavigate();
   console.log(id);
   useEffect(()=>{
     //http://www.omdbapi.com/?i=tt1521791
@@ -26,15 +29,31 @@ const Movie = () => {
 
         {movie ?
           <div className="w-[80vw] h-fit flex">
-              <div className="w-[30vw] h-[45vw] border p-4">
-                  <p>image here</p>
-              </div>
-              <div className="w-[50vw] border p-8">
+              <button onClick={()=>navigate(-1)} className='absolute text-white right-0 z-20'>
+              <AiOutlineArrowRight 
+                className=' '/>
+              </button>
+              <img src={movie.Poster} alt="" className='w-[30vw] h-[45vw] rounded-md ' />
+              <div className="w-[50vw] p-8">
                 <p className='text-3xl text-white'>{movie.Title}</p>
-                <p className=' text-slate-200'>{movie.Plot}</p>
-                <p className=' text-slate-200'>Genre:{movie.Genre}</p>
+                <p className='py-1 text-slate-200'>{movie.Plot}</p>
+                <p className='py-1 text-slate-200'>Genre:{movie.Genre}</p>
+                <p className='py-1 text-white'>Actors:{movie.Actors}</p>
+                <p className='py-1 text-white'>Year:{movie.Year}</p>
+              <div>
+                  <dl>
+                      <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Rating</dt>
+                      <dd className="flex items-center mb-3">
+                          <div className="w-[20vw] bg-gray-200 rounded h-2.5 dark:bg-gray-700 mr-2 relative">
+                              <div className="bg-blue-600 h-2.5 rounded dark:bg-blue-500" style={{width:`${movie.imdbRating * 10}%`}}></div>
+                          </div>
+                          <span className="text-sm font-medium text-gray-500 dark:text-gray-400">{movie.imdbRating}</span>
+                      </dd>
+                  </dl>
               </div>
+            </div>
           </div>
+
           :
           <div role="status" className="h-[60vh] w-[80vw] space-y-8 animate-pulse md:space-y-0 md:space-x-8 md:flex md:items-center">
             <div className="flex items-center justify-center w-[60vw] h-full bg-gray-300 rounded sm:w-96 ">
