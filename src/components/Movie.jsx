@@ -1,8 +1,7 @@
-import React ,{ useState } from 'react'
-import { useEffect } from 'react';
+import React ,{ useState,useEffect } from 'react'
 import {useParams,useNavigate} from 'react-router-dom'
-
 import {AiOutlineArrowRight} from 'react-icons/ai'
+import axios from 'axios'
 
 const Movie = () => {
   const [movie,setMovie] = useState();
@@ -10,16 +9,12 @@ const Movie = () => {
   const navigate = useNavigate();
   console.log(id);
   useEffect(()=>{
-    //http://www.omdbapi.com/?i=tt1521791
     setTimeout(()=>{
       if(id !== undefined){
-        fetch(`http://www.omdbapi.com/?i=${id}&apikey=d628e0b4`)
-          .then(res => res.json())
-          .then(data => setMovie(data))
-          .catch(err=>console.log(err))
-  
+        axios.get(`http://www.omdbapi.com/?i=${id}&apikey=d628e0b4`)
+          .then(res=>setMovie(res.data));
       }
-    },3000)
+    },2000)
   },[id])
 
   console.log(movie);
@@ -28,13 +23,13 @@ const Movie = () => {
       <div className="">
 
         {movie ?
-          <div className="w-[80vw] mt-[40vh] h-fit flex justify-center flex-wrap md:flex-nowrap">
+          <div className="w-[80vw] mt-[40vh] h-fit flex justify-center flex-wrap md:flex-nowrap overflow-auto">
               <button onClick={()=>navigate(-1)} className='absolute text-white right-0 z-20'>
               <AiOutlineArrowRight 
                 className=' '/>
               </button>
               <img src={movie.Poster} alt="" className='w-[60vw] h-[70vw]  md:w-[30vw] md:h-[45vw] rounded-md ' />
-              <div className="w-[50vw] p-8">
+              <div className="w-[80vw] p-8 text-center md:w-[50vw]">
                 <p className='text-3xl text-white'>{movie.Title}</p>
                 <p className='py-1 text-slate-200'>{movie.Plot}</p>
                 <p className='py-1 text-slate-200'>Genre:{movie.Genre}</p>
@@ -43,7 +38,7 @@ const Movie = () => {
               <div>
                   <dl>
                       <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Rating</dt>
-                      <dd className="flex items-center mb-3">
+                      <dd className="flex items-center justify-center mb-3">
                           <div className="w-[20vw] bg-gray-200 rounded h-2.5 dark:bg-gray-700 mr-2 relative">
                               <div className="bg-blue-600 h-2.5 rounded dark:bg-blue-500" style={{width:`${movie.imdbRating * 10}%`}}></div>
                           </div>

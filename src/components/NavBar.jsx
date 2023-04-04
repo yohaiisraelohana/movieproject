@@ -15,7 +15,7 @@ const NavBar = ({setApiReq}) => {
                 </div>
                 <div className="search w-3/12 flex justify-center">
                   <input type="text"
-                      className='rounded-md outline-none px-2'
+                      className='rounded-md outline-none px-2 w-full'
                       onKeyDown={(e)=>{
                         if(e.key === "Enter"){
                           setApiReq(`s=${e.target.value}&apikey=d628e0b4`);
