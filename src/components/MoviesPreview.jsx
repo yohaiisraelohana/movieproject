@@ -5,7 +5,7 @@ const MoviesPreview = ({bank_movies}) => {
 
   return (
     <div className='MoviesPreview w-screen flex justify-center my-6'>
-        <div className='w-5/6 grid grid-cols-4 gap-4'>
+        <div className='w-5/6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
             {bank_movies.map((movie)=>(
                 <Link to={`/movie/${movie.imdbID}`} className=" h-[50vh] z-10 ">
                   {movie.Poster === "N/A" ? 

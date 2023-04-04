@@ -1,6 +1,6 @@
 //react imports
 import React,{useState,useEffect} from 'react'
-
+import axios from 'axios';
 // style imports
 import '../styles/carusel.css'
 
@@ -9,13 +9,8 @@ const Carusel = () => {
   const [api_req , setApiReq] = useState('s=bank&apikey=d628e0b4');
 
   useEffect(()=>{
-    fetch(`http://www.omdbapi.com/?${api_req}`)
-      .then(res=>res.json())
-      .then(data=>{
-        const {Search} = data;
-        setBankMovie(Search);
-      })
-      .catch(err=>console.log(err))
+    axios.get(`http://www.omdbapi.com/?${api_req}`)
+      .then(res=>setBankMovie(res.data.Search))
   },[api_req]);
 
       

@@ -24,16 +24,16 @@ const Movie = () => {
 
   console.log(movie);
   return (
-    <div className={`h-screen w-screen flex items-center justify-center bg-slate-700`}>
+    <div className={`h-screen w-screen flex items-center justify-center bg-slate-700 overflow-y-auto `}>
       <div className="">
 
         {movie ?
-          <div className="w-[80vw] h-fit flex">
+          <div className="w-[80vw] mt-[40vh] h-fit flex justify-center flex-wrap md:flex-nowrap">
               <button onClick={()=>navigate(-1)} className='absolute text-white right-0 z-20'>
               <AiOutlineArrowRight 
                 className=' '/>
               </button>
-              <img src={movie.Poster} alt="" className='w-[30vw] h-[45vw] rounded-md ' />
+              <img src={movie.Poster} alt="" className='w-[60vw] h-[70vw]  md:w-[30vw] md:h-[45vw] rounded-md ' />
               <div className="w-[50vw] p-8">
                 <p className='text-3xl text-white'>{movie.Title}</p>
                 <p className='py-1 text-slate-200'>{movie.Plot}</p>
