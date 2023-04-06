@@ -6,6 +6,7 @@ import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import Home from '../pages/Home'
 import Movie from '../components/Movie'
 import GuestLayout from '../layouts/GuestLayout'
+import MoviesByYear from '../components/MoviesByYear'
 
 
 const AppRouter = () => {
@@ -15,7 +16,8 @@ const AppRouter = () => {
           <Routes>
             <Route path="/" element={<GuestLayout/>}>
               <Route path="/" element={<Home/>} />
-              <Route path="/movie/:id" element={<Movie/>}/>
+              <Route path="/movie/:id" element={<Movie/>}/> 
+              <Route path="/year/:year" element={<MoviesByYear/>}/>
             </Route>  
           </Routes>
         </Router>
