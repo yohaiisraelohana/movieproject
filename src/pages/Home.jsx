@@ -13,7 +13,7 @@ const Home = () => {
   const [api_req , setApiReq] = useState('s=bank&apikey=d628e0b4');
 
   useEffect(()=>{
-      axios.get(`http://www.omdbapi.com/?${api_req}`)
+      axios.get(`https://www.omdbapi.com/?${api_req}`)
         .then(res=>setBankMovie(res.data.Search))
   },[api_req]);
   console.log(bank_movies);
