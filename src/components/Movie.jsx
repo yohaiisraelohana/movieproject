@@ -23,7 +23,7 @@ const Movie = () => {
       <div className="">
 
         {movie ?
-          <div className="w-[80vw] mt-[40vh] h-fit flex justify-center flex-wrap md:flex-nowrap overflow-auto">
+          <div className="w-[80vw] mt-[40vh] md:mt-[10vh] h-fit flex justify-center flex-wrap md:flex-nowrap overflow-auto">
               <button onClick={()=>navigate(-1)} className='absolute text-white right-0 z-20'>
               <AiOutlineArrowRight 
                 className=' '/>
