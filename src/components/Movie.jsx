@@ -11,7 +11,7 @@ const Movie = () => {
   useEffect(()=>{
     setTimeout(()=>{
       if(id !== undefined){
-        axios.get(`http://www.omdbapi.com/?i=${id}&apikey=d628e0b4`)
+        axios.get(`https://www.omdbapi.com/?i=${id}&apikey=d628e0b4`)
           .then(res=>setMovie(res.data));
       }
     },2000)
