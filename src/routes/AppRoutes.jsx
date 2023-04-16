@@ -1,5 +1,5 @@
 //react imports
-import React from 'react'
+import React, { useEffect } from 'react'
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 
 //layouts imports
@@ -10,6 +10,9 @@ import Home from '../components/Home';
 import NotFound from '../components/NotFound';
 
 const AppRoutes = () => {
+  useEffect(()=>{
+    //http://localhost:3000/blogsProject/
+  },[])
     return (
         <Router>
             <Routes>
