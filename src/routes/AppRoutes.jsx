@@ -11,8 +11,7 @@ import GuestLayout from '../layouts/GuestLayout'
 import Home from '../components/Home';
 import NotFound from '../components/NotFound';
 import Resturent from '../components/resturent';
-import Account from '../components/Account';
-
+import ManageResturents from '../components/ManageResturents'
 
 
 
@@ -272,7 +271,7 @@ const AppRoutes = () => {
                   <Route path="/" element={<GuestLayout/>}>
                     <Route path='/' element={<Home/>}/>
                     <Route path='/resturent/:id' element={<Resturent/>} />
-                    <Route path='/manageResturents' element={<Account/>}/>
+                    <Route path='/manageResturents' element={<ManageResturents/>}/>
                   </Route>
                   <Route path="*" element={<NotFound/>}/>
             </Routes>
