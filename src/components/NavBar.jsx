@@ -8,7 +8,7 @@ import React from 'react'
 
 
 const NavBar = () => {
-  const nav_options = ["cart","account"];
+  const nav_options = ["Cart","Account","Add Resturent"];
   return (
     <div
         className=' absolute top-0 flex justify-center w-screen h-[10vh] bg-white border-b border-black px-[2vw]'>

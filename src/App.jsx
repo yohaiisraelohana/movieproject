@@ -1,13 +1,18 @@
 import './App.css'
 
 import AppRoutes from './routes/AppRoutes'
+import { Provider } from 'react-redux'
+import store from './redux/store'
+
 
 const App = ()=> {
 
 
   return (
     <div className="App">
-      <AppRoutes/>
+      <Provider store={store}>
+        <AppRoutes/>
+      </Provider>
     </div>
   )
 }
