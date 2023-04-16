@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
+import { Link,useNavigate } from 'react-router-dom';
 
 //assets imports
   //images
   import logo from '../assets/logoImage.jpeg';
   //icons
   import {AiOutlineMenu} from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+
 
 
 const NavBar = () => {
   const nav_options = [{name:"Add Resturent",link:"addResturent"},{name:"Manage Resturents",link:"manageResturents"}];
+  const navigate = useNavigate();
   const [show_menu,setShowMenue] = useState(false);
   return (
     <div
@@ -31,10 +33,14 @@ const NavBar = () => {
             {show_menu && 
                 <div className="md:hidden absolute top-[10vh] w-screen flex flex-wrap z-20 right-0 bg-white">
                 {nav_options.map((option)=>(
-                  <Link to={`/${option.link}`}
+                  <button 
+                    onClick={()=>{
+                      setShowMenue(!show_menu);
+                      navigate(`/${option.link}`)
+                    }}
                     className="w-full text-center border-b border-black py-2 hover:bg-gray-200" key={option.name}>
                     {option.name}
-                  </Link>
+                  </button>
                 ))}
                 </div>
             }

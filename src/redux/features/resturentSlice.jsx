@@ -4,7 +4,7 @@ const initialState = {
     resturents:[],
     presented_resturent:{},
 }
-
+//in add state.restu...length
 const resturentSlice = createSlice({
     name:"resturents",
     initialState,
