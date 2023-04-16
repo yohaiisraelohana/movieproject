@@ -21,9 +21,9 @@ const Resturent = () => {
     
 
   return (
-    <div className='h-fit w-screen flex flex-wrap justify-center relative'>
+    <div className='h-fit w-screen flex flex-wrap justify-center relative overflow-y-auto'>
         <img 
-            className='h-[30vh] w-screen'
+            className='h-[35vh] md:h-[50vh] lg:h-[70vh]  w-screen'
             src={`${presented_resturent.main_image}`} alt="" />
         <button 
             onClick={()=>navigate(-1)}
@@ -31,7 +31,7 @@ const Resturent = () => {
             <AiOutlineArrowRight/>
         </button>
         <div className=" w-screen flex flex-wrap justify-center h-[70vh]">
-            <div className="w-[80vw] bg-white h-fit z-10 -mt-[5vh] p-8 rounded-md">
+            <div className="w-[80vw] bg-white h-fit z-10 -mt-[5vh] p-8 rounded-md md:-mt-[10vh] lg:-mt-[20vh]">
                 <p className='text-3xl border-b-2' >{presented_resturent.name}</p>
                 <p>{presented_resturent.city}, {presented_resturent.cuisine} {presented_resturent.price}
                 {presented_resturent.price && new Array(5-presented_resturent.price.length).fill(`$`).map((d,i)=>(

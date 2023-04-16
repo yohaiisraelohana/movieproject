@@ -7,9 +7,9 @@
     <div key={r.id}
         className="bg-white rounded-md shadow-md">
         <img 
-          className='h-[15vh] w-full'
+          className='h-[15vh] lg:h-[20vh] w-full'
           src={`${r.main_image}`} alt="" />
-        <div className="h-[15vh] w-full p-2 overflow-y-auto">
+        <div className="h-[15vh] lg:h-[20vh] w-full p-2 overflow-y-auto">
           <p className='text-lg font-bold'>{r.name}</p>
           <p>{r.city}, {r.cuisine}</p>
           <p>{r.price}

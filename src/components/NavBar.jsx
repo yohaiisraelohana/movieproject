@@ -24,7 +24,7 @@ const NavBar = () => {
               className='h-full'
               src={logo} alt="" />
           </Link>
-          <div className="w-1/6 h-full flex justify-evenly items-center">
+          <div className="w-1/6 md:w-3/6 lg:w-2/6 h-full flex justify-evenly items-center">
             <button 
               onClick={()=>setShowMenue(!show_menu)}
               className="md:hidden text-3xl">
@@ -47,7 +47,7 @@ const NavBar = () => {
 
             {nav_options.map((option)=>(
               <Link to={`/${option.link}`}
-                className=" hidden md:block text-2xl" key={option.name}>
+                className=" hidden md:block text-xl " key={option.name}>
                 {option.name}
               </Link>
             ))}
