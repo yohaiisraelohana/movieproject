@@ -1,6 +1,8 @@
 //react imports
 import React, { useEffect } from 'react'
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+import { useDispatch } from 'react-redux';
+import { setResturents } from '../redux/features/resturentSlice';
 
 //layouts imports
 import GuestLayout from '../layouts/GuestLayout'
@@ -8,8 +10,9 @@ import GuestLayout from '../layouts/GuestLayout'
 //components imports
 import Home from '../components/Home';
 import NotFound from '../components/NotFound';
-import { useDispatch } from 'react-redux';
-import { setResturents } from '../redux/features/resturentSlice';
+import Resturent from '../components/resturent';
+
+
 
 
 
@@ -267,6 +270,7 @@ const AppRoutes = () => {
             <Routes>
                   <Route path="/" element={<GuestLayout/>}>
                     <Route path='/' element={<Home/>}/>
+                    <Route path='/resturent/:id' element={<Resturent/>} />
                   </Route>
                   <Route path="*" element={<NotFound/>}/>
             </Routes>

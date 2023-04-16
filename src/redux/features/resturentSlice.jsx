@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    resturents:[]
+    resturents:[],
+    presented_resturent:{},
 }
 
 const resturentSlice = createSlice({
@@ -12,11 +13,15 @@ const resturentSlice = createSlice({
             state.resturents = action.payload;
             localStorage.setItem("resturents",state.resturents.toString());
         },
-        getSingleResturent: (state,action) => {
-            console.log(action.payload);
+        setSingleResturent: (state,action) => {
+            console.log(action);
+            state.presented_resturent = state.resturents.find((r) => {
+                return r.id == action.payload
+            });
+
         }
     }
 })
 
-export const {setResturents} = resturentSlice.actions;
+export const {setResturents ,setSingleResturent} = resturentSlice.actions;
 export default resturentSlice.reducer;

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import ResturentCard from './ResturentCard';
 
@@ -6,13 +6,25 @@ import ResturentCard from './ResturentCard';
 
 const Home = () => {
   const {resturents} = useSelector(store => store.resturentReducer);
-  const [searched_resturents,setSearchedResturents] = useState([]);
+  const [searched_resturents,setSearchedResturents] = useState("");
   const search_input_ref = useRef();
 
 
   const hundleSearch = () => {
-    console.log(search_input_ref.current.value);
+    if(search_input_ref.current.value.length === 0){
+      setSearchedResturents([]);
+    }else{
+      setSearchedResturents(resturents.filter((r)=>{
+        return (
+          r.name.toLowerCase().includes(search_input_ref.current.value.toLowerCase()) || 
+          r.city.toLowerCase().includes(search_input_ref.current.value.toLowerCase()) ||(
+            r.cuisine && r.cuisine.toLowerCase().includes(search_input_ref.current.value.toLowerCase())
+          ))
+      }));
+    }
+    console.log(searched_resturents);
   }
+
 
   console.log(resturents);
   return (

@@ -1,7 +1,9 @@
  import React from 'react'
- 
+ import { Link } from 'react-router-dom'
+
  const ResturentCard = ({r}) => {
    return (
+    <Link to={`/resturent/${r.id}`}>
     <div key={r.id}
         className="bg-white rounded-md shadow-md">
         <img 
@@ -11,12 +13,13 @@
           <p className='text-lg font-bold'>{r.name}</p>
           <p>{r.city}, {r.cuisine}</p>
           <p>{r.price}
-            {new Array(5-r.price.length).fill(`$`).map((d,i)=>(
+            {r.price && new Array(5-r.price.length).fill(`$`).map((d,i)=>(
               <span key={i} className=' text-gray-400' >{d}</span>
             ))}
           </p>
         </div>
     </div>
+    </Link>
    )
  }
  
