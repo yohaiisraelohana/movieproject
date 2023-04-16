@@ -12,6 +12,7 @@ import Home from '../components/Home';
 import NotFound from '../components/NotFound';
 import Resturent from '../components/resturent';
 import ManageResturents from '../components/ManageResturents'
+import AddResturent from '../components/AddResturent';
 
 
 
@@ -271,6 +272,7 @@ const AppRoutes = () => {
                   <Route path="/" element={<GuestLayout/>}>
                     <Route path='/' element={<Home/>}/>
                     <Route path='/resturent/:id' element={<Resturent/>} />
+                    <Route path='/addResturent' element={<AddResturent/>}/>
                     <Route path='/manageResturents' element={<ManageResturents/>}/>
                   </Route>
                   <Route path="*" element={<NotFound/>}/>

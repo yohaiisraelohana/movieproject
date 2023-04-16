@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 
 const NavBar = () => {
-  const nav_options = [{name:"Add Resturent",link:"addResturent"},{name:"Manage Resturents",link:""}];
+  const nav_options = [{name:"Add Resturent",link:"addResturent"},{name:"Manage Resturents",link:"manageResturents"}];
   const [show_menu,setShowMenue] = useState(false);
   return (
     <div
